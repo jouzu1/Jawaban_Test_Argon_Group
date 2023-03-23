@@ -111,11 +111,11 @@ SELECT
   b.Harga AS HargaItem,
   (p.Jumlah * b.Harga) AS TotalTransaksi
 FROM
-  Penjualan p
-  JOIN Customer c ON p.KdCustomer = c.KdCustomer
+  Customer c
+  JOIN Penjualan p ON c.KdCustomer = p.KdCustomer
   JOIN Barang b ON p.KdBarang = b.KdBarang
 WHERE
-  p.TglFaktur BETWEEN '2023-01-10' AND '2023-01-11'
+  p.TglFaktur BETWEEN '10/1/2023' AND '11/1/2023'
 ORDER BY
   p.TglFaktur ASC;
 ````
